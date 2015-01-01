@@ -1,0 +1,18 @@
+extends layout
+
+block content
+  form#formUpdateUser(name="updateuser",method="post",enctype="multipart/form-data",action="/updateuserdirectory/#{user._id}")
+    h1 Update User
+    div.form-group
+      label(for="firstName") First Name:
+      input#firstName.form-control(type="text", placeholder="firstname", name="firstName", value="#{user.firstname}")
+    div.form-group
+      label(for="lastName") Last Name:
+      input#lastName.form-control(type="text", placeholder="lastname", name="lastName", value="#{user.lastname}")
+    div.form-group
+      label(for="uploadImage") Image:
+      input#uploadImage(type="file", name="uploadImage")
+    div.form-group
+      img#imgDisplay.img-circle.imgSmall(src="#{user.imageurl}")
+    button#btnSubmit.button.btn.btn-large.btn-success(type="submit") Update
+    

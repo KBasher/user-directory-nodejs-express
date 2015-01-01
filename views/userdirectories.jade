@@ -1,0 +1,16 @@
+extends layout
+
+block content
+    h1 User Directory
+    div.add
+      a.button.btn.btn-large.btn-success(href="/adduserdirectory") Add New User
+    each user in userlist
+      div.row
+        div.col-xs-3.col-sm-3.col-md-3.col-lg-3
+          img#imgDisplay.img-circle.imgSmall(src="#{user.imageurl}")
+        div.col-xs-5.col-sm-5.col-md-5.col-lg-5
+          a.textLineHeight(href="mailto:#{user.email}")= user.firstname
+        div.col-xs-2.col-sm-2.col-md-2.col-lg-2.textLineHeight
+          a.button.btn.btn-large.btn-success(href="/updateuserdirectory/#{user._id}") Update
+        div.col-xs-2.col-sm-2.col-md-2.col-lg-2.textLineHeight
+          button#btnSubmit.button.btn.btn-large.btn-success(type="submit", onclick="DeleteUser('#{user._id}')") Delete

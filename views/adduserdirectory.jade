@@ -1,0 +1,17 @@
+extends layout
+
+block content
+    h1= title
+    form#formAddUser(name="adduser",method="post",enctype="multipart/form-data",action="/adduserdirectory")
+        div.form-group
+          label(for="firstName") First Name:
+          input#firstName.form-control(type="text", placeholder="firstname", name="firstName")
+        div.form-group
+          label(for="lastName") Last Name:
+          input#lastName.form-control(type="text", placeholder="lastname", name="lastName")
+        div.form-group
+          label(for="uploadImage") Image:
+          input#uploadImage(type="file", name="uploadImage")
+        button#btnSubmit.button.btn.btn-large.btn-success(type="submit") Submit
+        
+
